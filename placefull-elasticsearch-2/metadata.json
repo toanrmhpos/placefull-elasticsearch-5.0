@@ -1,0 +1,42 @@
+{
+  "name": "placefull-elasticsearch-2",
+  "description": "Installs/Configures placefull-elasticsearch-2",
+  "long_description": "Installs/Configures placefull-elasticsearch-2",
+  "maintainer": "The Authors",
+  "maintainer_email": "you@example.com",
+  "license": "all_rights",
+  "platforms": {
+  },
+  "dependencies": {
+    "elasticsearch": ">= 2.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0",
+  "source_url": "",
+  "issues_url": "",
+  "privacy": false,
+  "chef_versions": [
+
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}
