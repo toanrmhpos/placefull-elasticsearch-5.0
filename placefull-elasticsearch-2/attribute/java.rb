@@ -4,5 +4,5 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-default["java"]["install_flavor"] = "openjdk"
-default["java"]["jdk_version"] = "8"
+normal["java"]["install_flavor"] = "openjdk"
+normal["java"]["jdk_version"] = "8"
