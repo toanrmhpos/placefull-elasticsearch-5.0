@@ -5,7 +5,9 @@ license 'all_rights'
 description 'Installs/Configures placefull-elasticsearch-2'
 long_description 'Installs/Configures placefull-elasticsearch-2'
 version '0.1.0'
+depends 'java'
 depends 'elasticsearch', '>= 2.0.0'
+
 
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Issues` link
