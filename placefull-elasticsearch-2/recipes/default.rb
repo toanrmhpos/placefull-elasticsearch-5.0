@@ -14,12 +14,12 @@ elasticsearch_configure 'elasticsearch' do
 allocated_memory '1g'
 configuration ({
 'cluster.name' => 'placefull-es-2',
-'node.name' => 'node01',
+'node.name' => '_ec2:privateIp_',
 'node.master' => 'true',
 'node.data' => 'true',
 'bootstrap.mlockall' => 'false',
 'network.host' => '_ec2:privateIp_',
-
+'plugin.mandatory' => 'cloud-aws',
 'discovery.type' => 'ec2',
 'discovery.zen.minimum_master_nodes' => '2',
 'discovery.zen.ping.multicast.enabled' => 'false',
@@ -31,13 +31,15 @@ configuration ({
 })
 end
 
+elasticsearch_plugin 'cloud-aws' do
+  action :install
+end
+
 elasticsearch_service 'elasticsearch' do
 service_actions [:enable, :start]
 end
 
-elasticsearch_plugin 'cloud-aws' do
-  action :install
-end
+
 
 elasticsearch_plugin 'head' do
 url 'mobz/elasticsearch-head'
