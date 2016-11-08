@@ -14,7 +14,7 @@ elasticsearch_configure 'elasticsearch' do
 allocated_memory '1g'
 configuration ({
 'cluster.name' => 'placefull-es-2',
-'node.name' => '_ec2:privateIp_',
+'node.name' => '#{instance['hostname']}',
 'node.master' => 'true',
 'node.data' => 'true',
 'bootstrap.mlockall' => 'false',
