@@ -5,8 +5,19 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 include_recipe "java"
+include_recipe 'nginx::repo'
+
+package 'nginx' do
+  action :install
+end
+
+service 'nginx' do
+  supports status: true, restart: true, reload: true
+  action :enable
+end
+
+
 instance = search(:aws_opsworks_instance, "self:true").first
-Chef::Log.info "EXAMPLE: Current node: #{instance['hostname']}"
 elasticsearch_user 'elasticsearch'
 elasticsearch_install 'elasticsearch' do
 type :package
