@@ -1,3 +1,4 @@
 source 'https://supermarket.chef.io'
 cookbook 'java', '>= 1.42.0', git: 'git://github.com/agileorbit-cookbooks/java.git', tag: 'v1.42.0'
+cookbook 'chef_nginx', '= 4.0.1', git: 'git://github.com/chef-cookbooks/chef_nginx', tag: 'v4.0.1'
 metadata
