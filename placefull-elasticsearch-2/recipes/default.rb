@@ -5,7 +5,7 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 include_recipe "java"
-
+instance = search("aws_opsworks_instance", "self:true").first
 elasticsearch_user 'elasticsearch'
 elasticsearch_install 'elasticsearch' do
 type :package
@@ -14,7 +14,7 @@ elasticsearch_configure 'elasticsearch' do
 allocated_memory '1g'
 configuration ({
 'cluster.name' => 'placefull-es-2',
-'node.name' => '#{instance['hostname']}',
+'node.name' => '"#{instance["hostname"]}"',
 'node.master' => 'true',
 'node.data' => 'true',
 'bootstrap.mlockall' => 'false',
