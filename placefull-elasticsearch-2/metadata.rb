@@ -7,7 +7,7 @@ long_description 'Installs/Configures placefull-elasticsearch-2'
 version '0.1.0'
 depends 'java'
 depends 'elasticsearch', '= 2.4.0'
-depends 'chef_nginx', '= 4.0.1'
+
 
 
 # If you upload to Supermarket you should set this so your cookbook

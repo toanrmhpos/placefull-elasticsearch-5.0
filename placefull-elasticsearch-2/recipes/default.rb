@@ -5,7 +5,12 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 include_recipe "java"
-include_recipe 'nginx::repo'
+
+
+execute "apt-get update" do
+  command "apt-get update"
+end
+
 
 package 'nginx' do
   action :install
