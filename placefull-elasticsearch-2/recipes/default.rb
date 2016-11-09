@@ -1,13 +1,31 @@
 #
 # Cookbook Name:: placefull-elasticsearch-2
 # Recipe:: default
-#
+# Uses the elasticsearch cookbook provided by elastic.co to install elasticsearch
+# Requires Chef 12.0+
+
 # Copyright (c) 2016 The Authors, All Rights Reserved.
+
+#  While the Java recipe is referenced here to install Java, you must also add the following to the Opsworks
+# Stack > Stack Settings > Custom JSON field when creating the stack
+# { 
+# "java":{
+#       "install_flavor":"oracle",
+#       "jdk_version":"8",
+#       "oracle": {
+#                "accept_oracle_download_terms":"true"
+#                 }
+#         }
+# }
+#
+#
+#
+#
+#
+#
 
 include_recipe "java"
 include_recipe "placefull-nginx"
-
-
 
 instance = search(:aws_opsworks_instance, "self:true").first
 elasticsearch_user 'elasticsearch'
@@ -15,7 +33,7 @@ elasticsearch_install 'elasticsearch' do
 type :package
 end
 elasticsearch_configure 'elasticsearch' do
-allocated_memory '1g'
+allocated_memory '2.5g'
 configuration ({
 'cluster.name' => 'placefull-es-2',
 'node.name' => "#{instance['hostname']}",
