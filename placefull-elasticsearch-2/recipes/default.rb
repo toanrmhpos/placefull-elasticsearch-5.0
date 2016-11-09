@@ -5,21 +5,8 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 include_recipe "java"
+include_recipe "placefull-nginx"
 
-
-package 'nginx' do
-  action :install
-end
-
-cookbook_file "/etc/nginx/nginx.conf" do
-  source "nginx.conf"
-  mode "0644"
-end
-
-service 'nginx' do
-  supports status: true, restart: true, reload: true
-  action [ :enable, :start ]
-end
 
 
 instance = search(:aws_opsworks_instance, "self:true").first
