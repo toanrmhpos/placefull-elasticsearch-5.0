@@ -33,9 +33,9 @@ elasticsearch_install 'elasticsearch' do
 type :package
 end
 elasticsearch_configure 'elasticsearch' do
-allocated_memory '2.5g'
+allocated_memory '1g'
 configuration ({
-'cluster.name' => 'placefull-es-2',
+'cluster.name' => 'placefull-staging-es-2',
 'node.name' => "#{instance['hostname']}",
 'node.master' => 'true',
 'node.data' => 'true',
