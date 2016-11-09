@@ -36,6 +36,7 @@ configuration ({
 'node.data' => 'true',
 'bootstrap.mlockall' => 'false',
 'network.host' => '_ec2:privateIp_',
+'http.host' => '127.0.0.1',
 'plugin.mandatory' => 'cloud-aws',
 'discovery.type' => 'ec2',
 'discovery.zen.minimum_master_nodes' => '2',
