@@ -39,7 +39,7 @@ configuration ({
 'node.name' => "#{instance['hostname']}",
 'node.master' => 'true',
 'node.data' => 'true',
-'bootstrap.mlockall' => 'false',
+'bootstrap.memory_lock' => 'true',
 'network.host' => '_ec2:privateIp_',
 'http.host' => '127.0.0.1',
 'plugin.mandatory' => 'discovery-ec2',
