@@ -33,7 +33,7 @@ elasticsearch_install 'elasticsearch' do
 type 'package'
 end
 elasticsearch_configure 'elasticsearch' do
-allocated_memory '1g'
+allocated_memory '768m'
 configuration ({
 'cluster.name' => 'placefull-staging-es-50',
 'node.name' => "#{instance['hostname']}",
