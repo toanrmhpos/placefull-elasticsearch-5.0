@@ -33,7 +33,7 @@ elasticsearch_install 'elasticsearch' do
 type 'package'
 end
 elasticsearch_configure 'elasticsearch' do
-allocated_memory '1g'
+allocated_memory '512m'
 configuration ({
 'cluster.name' => 'placefull-staging-es-50',
 'node.name' => "#{instance['hostname']}",
@@ -48,8 +48,6 @@ configuration ({
 'discovery.zen.ping.multicast.enabled' => 'false',
 'cloud.node.auto_attributes' => 'true',
 'cloud.aws.region' => 'us-east-1',
-'cluster.routing.allocation.awareness.attributes' => 'rack_id',
-'node.rack_id' => 'us-east-1b'
 
 })
 end
