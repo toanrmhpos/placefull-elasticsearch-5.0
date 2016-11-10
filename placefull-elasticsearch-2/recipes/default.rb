@@ -45,7 +45,6 @@ configuration ({
 'plugin.mandatory' => 'discovery-ec2',
 'discovery.type' => 'ec2',
 'discovery.zen.minimum_master_nodes' => '2',
-'discovery.zen.ping.multicast.enabled' => 'false',
 'cloud.node.auto_attributes' => 'true',
 'cloud.aws.region' => 'us-east-1',
 
