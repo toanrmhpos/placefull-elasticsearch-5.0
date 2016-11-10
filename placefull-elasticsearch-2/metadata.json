@@ -8,7 +8,7 @@
   "platforms": {
   },
   "dependencies": {
-    "elasticsearch": ">= 2.0.0"
+    "elasticsearch": ">= 3.0.0"
   },
   "recommendations": {
   },
