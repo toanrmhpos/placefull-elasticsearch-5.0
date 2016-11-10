@@ -64,7 +64,21 @@ elasticsearch_service 'elasticsearch' do
 service_actions [:enable, :start]
 end
 
+execute 'get-kibana' do
+   command 'wget https://artifacts.elastic.co/downloads/kibana/kibana-5.0.0-x86_64.rpm'
+end
 
+execute 'install-kibana' do
+   command 'sudo rpm --install kibana-5.0.0-x86_64.rpm'
+end
+
+service 'kibana' do
+  action :enable
+end
+
+service 'kibana' do
+  action :start
+end
 
 #elasticsearch_plugin 'head' do
 #url 'mobz/elasticsearch-head'
