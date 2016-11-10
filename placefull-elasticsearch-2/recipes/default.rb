@@ -47,7 +47,7 @@ configuration ({
 'discovery.zen.minimum_master_nodes' => '2',
 'cloud.node.auto_attributes' => 'true',
 'cloud.aws.region' => 'us-east-1',
-
+'sheild.enabled' => 'false' 
 })
 end
 
