@@ -54,7 +54,7 @@ configuration ({
 })
 end
 
-elasticsearch_plugin 'cloud-aws' do
+elasticsearch_plugin 'discovery-ec2' do
   action :install
 end
 
@@ -68,8 +68,8 @@ end
 
 
 
-elasticsearch_plugin 'head' do
-url 'mobz/elasticsearch-head'
-notifies :restart, 'elasticsearch_service[elasticsearch]', :delayed
-end
+#elasticsearch_plugin 'head' do
+#url 'mobz/elasticsearch-head'
+#notifies :restart, 'elasticsearch_service[elasticsearch]', :delayed
+#end
 
