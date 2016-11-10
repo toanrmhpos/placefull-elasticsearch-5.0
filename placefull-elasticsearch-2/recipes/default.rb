@@ -35,14 +35,14 @@ end
 elasticsearch_configure 'elasticsearch' do
 allocated_memory '1g'
 configuration ({
-'cluster.name' => 'placefull-staging-es-2',
+'cluster.name' => 'placefull-staging-es-50',
 'node.name' => "#{instance['hostname']}",
 'node.master' => 'true',
 'node.data' => 'true',
 'bootstrap.mlockall' => 'false',
 'network.host' => '_ec2:privateIp_',
 'http.host' => '127.0.0.1',
-'plugin.mandatory' => 'cloud-aws',
+'plugin.mandatory' => 'discovery-ec2',
 'discovery.type' => 'ec2',
 'discovery.zen.minimum_master_nodes' => '2',
 'discovery.zen.ping.multicast.enabled' => 'false',
