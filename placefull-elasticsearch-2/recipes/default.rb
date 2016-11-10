@@ -58,6 +58,10 @@ elasticsearch_plugin 'cloud-aws' do
   action :install
 end
 
+elasticsearch_plugin 'x-pack' do
+  action :install
+end
+
 elasticsearch_service 'elasticsearch' do
 service_actions [:enable, :start]
 end
@@ -68,3 +72,4 @@ elasticsearch_plugin 'head' do
 url 'mobz/elasticsearch-head'
 notifies :restart, 'elasticsearch_service[elasticsearch]', :delayed
 end
+

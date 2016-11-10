@@ -6,7 +6,7 @@ description 'Uses the elasticsearch cookbook provided by elastic.co to install e
 long_description 'Uses the elasticsearch cookbook provided by elastic.co to install elasticsearch'
 version '0.1.0'
 depends 'java'
-depends 'elasticsearch', '= 2.4.0'
+depends 'elasticsearch', '= 3.0.1'
 depends 'placefull-nginx'
 
 
