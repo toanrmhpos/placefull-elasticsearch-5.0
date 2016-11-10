@@ -47,7 +47,8 @@ configuration ({
 'discovery.zen.minimum_master_nodes' => '2',
 'cloud.node.auto_attributes' => 'true',
 'cloud.aws.region' => 'us-east-1',
-'sheild.enabled' => 'false' 
+'action.auto_create_index' => '.security,.monitoring*,.watches,.triggered_watches,.watcher-history*',
+'xpack.security.enabled' => 'false' 
 })
 end
 
