@@ -30,7 +30,7 @@ include_recipe "placefull-nginx"
 instance = search(:aws_opsworks_instance, "self:true").first
 elasticsearch_user 'elasticsearch'
 elasticsearch_install 'elasticsearch' do
-type :package
+type 'package'
 end
 elasticsearch_configure 'elasticsearch' do
 allocated_memory '1g'
