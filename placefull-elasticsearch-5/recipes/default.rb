@@ -33,9 +33,10 @@ elasticsearch_install 'elasticsearch' do
 type 'package'
 end
 elasticsearch_configure 'elasticsearch' do
-allocated_memory '512m'
+#only install this production level Recipe on t2.medium or larger!
+allocated_memory '2.5g'
 configuration ({
-'cluster.name' => 'placefull-staging-es-50',
+'cluster.name' => 'placefull-search-prod-cluster-50',
 'node.name' => "#{instance['hostname']}",
 'node.master' => 'true',
 'node.data' => 'true',
