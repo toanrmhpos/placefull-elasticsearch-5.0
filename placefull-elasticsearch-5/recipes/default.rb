@@ -64,38 +64,6 @@ elasticsearch_service 'elasticsearch' do
 service_actions [:enable, :start]
 end
 
-execute 'get-kibana' do
-   command 'wget https://artifacts.elastic.co/downloads/kibana/kibana-5.0.0-x86_64.rpm'
-end
 
-execute 'remove-kibana' do
-   command 'sudo rpm -e kibana'
-   ignore_failure true
-end
-
-execute 'install-kibana' do
-   command 'sudo rpm --install kibana-5.0.0-x86_64.rpm'
-end
-
-execute 'install-kibana-xpack' do
-   command '/usr/share/kibana/bin/kibana-plugin install x-pack'
-end
-
-cookbook_file "/etc/kibana/kibana.yml" do
-  source "kibana.yml"
-  mode "0644"
-end
-
-service 'kibana' do
-  action :enable
-end
-
-service 'kibana' do
-  action :start
-end
-
-#elasticsearch_plugin 'head' do
-#url 'mobz/elasticsearch-head'
-#notifies :restart, 'elasticsearch_service[elasticsearch]', :delayed
-#end
+include_recipe "placefull-kibana"
 

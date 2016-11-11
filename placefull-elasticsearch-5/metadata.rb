@@ -6,8 +6,10 @@ description 'Uses the elasticsearch cookbook provided by elastic.co to install e
 long_description 'Uses the elasticsearch cookbook provided by elastic.co to install elasticsearch'
 version '0.1.0'
 depends 'java'
+# this installs ES v5.0. The Cookbook is V3.0.1
 depends 'elasticsearch', '= 3.0.1'
 depends 'placefull-nginx'
+depends 'placefull-kibana'
 
 
 
