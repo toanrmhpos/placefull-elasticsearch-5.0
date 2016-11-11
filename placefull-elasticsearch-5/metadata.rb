@@ -1,4 +1,4 @@
-name 'placefull-elasticsearch-2'
+name 'placefull-elasticsearch-5'
 maintainer 'PlaceFull Inc.'
 maintainer_email 'dev@placefull.com'
 license 'all_rights'

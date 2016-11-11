@@ -1,6 +1,6 @@
 # # encoding: utf-8
 
-# Inspec test for recipe placefull-elasticsearch-2::default
+# Inspec test for recipe placefull-elasticsearch-5::default
 
 # The Inspec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec_reference.html
