@@ -42,6 +42,8 @@ configuration ({
 'node.data' => 'true',
 'bootstrap.memory_lock' => 'true',
 'network.host' => '_ec2:privateIp_',
+'http.cors.enabled' => 'true',
+'http.cors.allow-origin' => '"*"',
 'http.host' => '127.0.0.1',
 'plugin.mandatory' => 'discovery-ec2',
 'discovery.type' => 'ec2',
