@@ -28,6 +28,8 @@ include_recipe "java"
 include_recipe "placefull-nginx"
 
 instance = search(:aws_opsworks_instance, "self:true").first
+stack = search(:aws_opsworks_stack).first
+
 elasticsearch_user 'elasticsearch'
 elasticsearch_install 'elasticsearch' do
 type 'package'
@@ -43,11 +45,12 @@ configuration ({
 'bootstrap.memory_lock' => 'true',
 'network.host' => '_ec2:privateIp_',
 'http.cors.enabled' => 'true',
-'http.cors.allow-origin' => '"*"',
+'http.cors.allow-origin' => '*',
 'http.host' => '127.0.0.1',
 'plugin.mandatory' => 'discovery-ec2',
 'discovery.type' => 'ec2',
 'discovery.zen.minimum_master_nodes' => '2',
+'discovery.ec2.tag.opsworks:stack' => "#{stack['name']}"
 'cloud.node.auto_attributes' => 'true',
 'cloud.aws.region' => 'us-east-1',
 'action.auto_create_index' => '.security,.monitoring*,.watches,.triggered_watches,.watcher-history*',
