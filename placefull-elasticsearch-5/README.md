@@ -1,4 +1,4 @@
-# placefull-elasticsearch-2
+# placefull-elasticsearch-5
 
-TODO: Enter the cookbook description here.
+This is the wrapper cookbook for ES, Kibana and Nginx.  The Default recipe in this sets most everything up using those recipes
 
