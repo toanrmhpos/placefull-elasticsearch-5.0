@@ -18,11 +18,11 @@
 # limitations under the License.
 
 # default jdk attributes
-default['java']['jdk_version'] = '6'
+default['java']['jdk_version'] = '8'
 default['java']['arch'] = node['kernel']['machine'] =~ /x86_64/ ? 'x86_64' : 'i586'
 default['java']['openjdk_packages'] = []
 default['java']['openjdk_version'] = nil
-default['java']['accept_license_agreement'] = false
+default['java']['accept_license_agreement'] = true
 default['java']['set_default'] = true
 default['java']['alternatives_priority'] = 1062
 default['java']['set_etc_environment'] = false
@@ -30,7 +30,7 @@ default['java']['use_alt_suffix'] = true
 default['java']['reset_alternatives'] = true
 
 # the following retry parameters apply when downloading oracle java
-default['java']['ark_retries'] = 0
+default['java']['ark_retries'] = 2
 default['java']['ark_retry_delay'] = 2
 default['java']['ark_timeout'] = 600
 default['java']['ark_download_timeout'] = 600
@@ -80,7 +80,7 @@ when 'oracle_rpm'
 end
 
 # if you change this to true, you can download directly from Oracle
-default['java']['oracle']['accept_oracle_download_terms'] = false
+default['java']['oracle']['accept_oracle_download_terms'] = true
 
 # direct download paths for oracle, you have been warned!
 
@@ -131,7 +131,7 @@ default['java']['jdk']['8']['bin_cmds'] = %w(appletviewer apt ControlPanel extch
 # Official checksums for the latest release can be found at https://www.oracle.com/webfolder/s/digest/8u60checksum.html
 
 # x86_64
-default['java']['jdk']['8']['x86_64']['url'] = 'https://download.oracle.com/otn/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.tar.gz'
+default['java']['jdk']['8']['x86_64']['url'] = 'http://download.oracle.com/otn/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.tar.gz'
 default['java']['jdk']['8']['x86_64']['checksum'] = '9a5c32411a6a06e22b69c495b7975034409fa1652d03aeb8eb5b6f59fd4594e0'
 
 # i586
