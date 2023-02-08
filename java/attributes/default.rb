@@ -135,8 +135,8 @@ default['java']['jdk']['8']['x86_64']['url'] = 'http://download.oracle.com/otn-p
 default['java']['jdk']['8']['x86_64']['checksum'] = '62b215bdfb48bace523723cdbb2157c665e6a25429c73828a32f00e587301236'
 
 # i586
-default['java']['jdk']['8']['i586']['url'] = 'http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-i586.tar.gz'
-default['java']['jdk']['8']['i586']['checksum'] = 'b11212ef06235296cad2f9b80a22f2d853a2d2f66ce55b993eb686e5a2da365d'
+default['java']['jdk']['8']['i586']['url'] = 'http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-i586.tar.gz'
+default['java']['jdk']['8']['i586']['checksum'] = '0069a2b1b1cddbefa45f1ff12933fca3b114b6544d536ec0e2d4861a830d7154'
 
 default['java']['oracle']['jce']['enabled'] = false
 default['java']['oracle']['jce']['8']['url'] = 'http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip'
