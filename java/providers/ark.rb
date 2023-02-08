@@ -66,6 +66,7 @@ end
 
 def download_direct_from_oracle(tarball_name, new_resource)
   download_path = "#{Chef::Config[:file_cache_path]}/#{tarball_name}"
+  Chef::Log.info('downloadpath: ' + download_path)
   cookie = 'oraclelicense=accept-securebackup-cookie'
   if node['java']['oracle']['accept_oracle_download_terms']
     # install the curl package
@@ -76,7 +77,7 @@ def download_direct_from_oracle(tarball_name, new_resource)
     p.run_action(:install)
     description = 'download oracle tarball straight from the server'
     converge_by(description) do
-      Chef::Log.debug 'downloading oracle tarball straight from the source'
+      Chef::Log.info 'downloading oracle tarball straight from the source'
       cmd = shell_out!(
         %( curl --create-dirs -L --retry #{new_resource.retries} --retry-delay #{new_resource.retry_delay} --cookie "#{cookie}" #{new_resource.url} -o #{download_path} --connect-timeout #{new_resource.connect_timeout} ),
                                  timeout: new_resource.download_timeout
@@ -120,12 +121,12 @@ action :install do
     if new_resource.url =~ /^http:\/\/download.oracle.com.*$/ || new_resource.url =~ /^https:\/\/download.oracle.com.*$/
       download_path = "#{Chef::Config[:file_cache_path]}/#{tarball_name}"
       if oracle_downloaded?(download_path, new_resource)
-        Chef::Log.debug('oracle tarball already downloaded, not downloading again')
+        Chef::Log.info('oracle tarball already downloaded, not downloading again')
       else
         download_direct_from_oracle tarball_name, new_resource
       end
     else
-      Chef::Log.debug('downloading tarball from an unofficial repository')
+      Chef::Log.info('downloading tarball from an unofficial repository')
       r = remote_file "#{Chef::Config[:file_cache_path]}/#{tarball_name}" do
         source new_resource.url
         checksum new_resource.checksum
